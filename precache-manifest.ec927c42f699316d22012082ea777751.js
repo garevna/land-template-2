@@ -116,8 +116,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dgtek-land-2/js/chunk-vendors.09c42f34.js"
   },
   {
-    "revision": "158f6f0909b196d32bdb1b42d5cd2b95",
+    "revision": "987663d6d62c7cac418fbaedf6555291",
     "url": "/dgtek-land-2/manifest.json"
+  },
+  {
+    "revision": "912d7b3836eeea0c1b59f7f724cc3270",
+    "url": "/dgtek-land-2/mstile-150x150.png"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
