@@ -1,7 +1,7 @@
 {
-  "name": "dgtek-covid",
+  "name": "dgtek-land-2",
   "version": "1.0.0",
-  "description": "Landing page DGTek-COVID-19",
+  "description": "Landing page template for DGTek",
   "author": "garevna <irina.h.fylyppova@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",

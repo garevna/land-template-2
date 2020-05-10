@@ -17,7 +17,7 @@ const mutations = {
 
 const actions = {
   async GET_BLOG_NEWS ({ state, commit }) {
-    const response = (await (await fetch(`${state.newsEndpoint}`)).json()).data
+    const response = (await (await fetch(state.newsEndpoint)).json()).data
     commit('BLOG_NEWS', response)
     return state.news
   },

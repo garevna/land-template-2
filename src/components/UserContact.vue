@@ -1,41 +1,50 @@
 <template>
-  <v-card class="user-info mx-auto pa-6">
-    <v-card-title>
-      <h4>{{ userForm.title }}</h4>
-    </v-card-title>
-    <v-card-text class="mx-0 px-0" width="100%">
-      <v-text-field
-            v-for="(item, prop) in items"
-            :key="prop"
-            :placeholder="item.placeholder"
-            outlined
-            :color="item.color"
-            v-model="item.value"
-            class="user-inputs"
-            :error="item.error"
-            :append-icon="item.validationIcon"
-            @input="validate(item)"
-      ></v-text-field>
-      <v-textarea
-            :placeholder="userForm.messagePlaceholder"
-            outlined
-            color="#656565"
-            auto-grow
-            v-model="message"
-            class="user-inputs"
-      ></v-textarea>
-    </v-card-text>
-    <v-card-actions class="text-center">
-      <v-btn
-          dark
-          width="100%"
-          height="65"
-          color="buttons"
-          class="submit-button"
-          @click="sendUserRequest"
-      >{{ userForm.button }}</v-btn>
-    </v-card-actions>
-    <Popup :opened.sync="popupOpened" />
+  <v-card flat class="transparent mx-auto" max-width="450" style="position: relative">
+    <v-img
+          v-if="viewportWidth > 960"
+          src="@/assets/pictures/pointed-shape.svg"
+          contain
+          style="position: absolute; top: -40px; left: -40px;"
+    ></v-img>
+      <v-card class="user-info mx-auto py-4 px-6" max-width="450">
+        <v-card-title>
+          <h4>{{ userForm.title }}</h4>
+        </v-card-title>
+        <v-card-text class="mx-0 px-0" width="100%">
+          <v-text-field
+                v-for="(item, prop) in items"
+                :key="prop"
+                :placeholder="item.placeholder"
+                outlined
+                :color="item.color"
+                v-model="item.value"
+                class="user-inputs"
+                :error="item.error"
+                :append-icon="item.validationIcon"
+                @input="validate(item)"
+          ></v-text-field>
+          <v-textarea
+                :placeholder="userForm.messagePlaceholder"
+                outlined
+                color="#656565"
+                auto-grow
+                v-model="message"
+                class="user-inputs"
+          ></v-textarea>
+        </v-card-text>
+        <v-card-actions class="text-center">
+          <v-btn
+              dark
+              width="100%"
+              height="65"
+              color="buttons"
+              class="submit-button"
+              @click="sendUserRequest"
+          >{{ userForm.button }}</v-btn>
+        </v-card-actions>
+        <Popup :opened.sync="popupOpened" />
+      </v-card>
+
   </v-card>
 </template>
 
@@ -167,6 +176,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(['viewportWidth']),
     ...mapState('content', ['userForm', 'subject', 'textForUserMail'])
   },
   methods: {

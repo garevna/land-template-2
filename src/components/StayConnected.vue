@@ -139,7 +139,7 @@ export default {
           name: this.name,
           email: this.email,
           phone: this.phone,
-          subject: 'COVID-19: DGTek helping The Community',
+          subject: 'DGTek',
           message: this.message
         })
       })).json()

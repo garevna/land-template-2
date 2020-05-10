@@ -1,6 +1,8 @@
-# dgtek-covid
+# dgtek-land-2
 
-[**demo**](https://garevna.github.io/dgtek-covid/)
+#### Landing page template
+
+[**demo**](https://garevna.github.io/dgtek-land-2/)
 
 ## Project setup
 ```

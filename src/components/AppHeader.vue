@@ -1,5 +1,5 @@
 <template>
-<v-container fluid>
+<v-container>
   <!-- Viewport width less then lg -->
   <v-expansion-panels
           tile
@@ -7,7 +7,7 @@
           v-model="panel"
           class="app-bar d-lg-none"
           width="100%"
-          style="position: fixed; margin-top: -8px; z-index: 10;"
+          style="position: fixed; z-index: 10"
   >
     <v-expansion-panel style="background: #FAFAFA">
       <v-expansion-panel-header
