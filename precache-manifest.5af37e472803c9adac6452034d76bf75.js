@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dgtek-land-2/browserconfig.xml"
   },
   {
-    "revision": "2ce76dbac150f4694362",
-    "url": "/dgtek-land-2/css/app.ad300a93.css"
+    "revision": "f65f2e6135b914599e3c",
+    "url": "/dgtek-land-2/css/app.b60c190f.css"
   },
   {
     "revision": "ecc4eefbb8541411413b",
@@ -76,6 +76,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dgtek-land-2/fonts/materialdesignicons-webfont.f5111234.ttf"
   },
   {
+    "revision": "42cc6a1d2845e631c212b1f3f22a3e80",
+    "url": "/dgtek-land-2/img/default-avatar.png"
+  },
+  {
     "revision": "cba76bc5ec80591e5d9a55306c1ad32a",
     "url": "/dgtek-land-2/img/globe.cba76bc5.svg"
   },
@@ -92,8 +96,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dgtek-land-2/img/man_with_building.462a4c08.svg"
   },
   {
-    "revision": "54759fbf60e33612e5aafeb3a165b3a8",
-    "url": "/dgtek-land-2/img/map-picture.54759fbf.svg"
+    "revision": "5147c68b30b8b0beabbf6eb897e5d458",
+    "url": "/dgtek-land-2/img/pointed-shape.5147c68b.svg"
   },
   {
     "revision": "365f2efda4e4d916f2e8cfd94a0cd057",
@@ -104,12 +108,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dgtek-land-2/img/speed.c9a0c7cf.svg"
   },
   {
-    "revision": "c3becd1e0a0faf4ac5fc9b1feb466358",
+    "revision": "d907eafc072c5b5a384b99614dfbf36a",
     "url": "/dgtek-land-2/index.html"
   },
   {
-    "revision": "2ce76dbac150f4694362",
-    "url": "/dgtek-land-2/js/app.aae588cf.js"
+    "revision": "f65f2e6135b914599e3c",
+    "url": "/dgtek-land-2/js/app.423614d9.js"
   },
   {
     "revision": "ecc4eefbb8541411413b",
