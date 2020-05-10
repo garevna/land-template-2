@@ -3,14 +3,11 @@
 
 const state = {
   news: null,
-  content: null
-}
-
-const getters = {
-  contentEndpoint: (state, getters, rootState) => `${rootState.host}/api/frontend/posts`,
-  defaultPicture: (state, getters, rootState) => `${rootState.host}/storage/posts/1.jpg`,
-  defaultAvatar: (state, getters, rootState) => `${rootState.host}/storage/posts/users/1.png`,
-  newsEndpoint: (state, getters, rootState) => `${rootState.host}/api/frontend/news`
+  content: null,
+  contentEndpoint: 'https://dka.dgtek.net/api/frontend/posts',
+  newsEndpoint: 'https://dka.dgtek.net/api/frontend/news',
+  defaultPicture: '/img/default-article-picture.jpg',
+  defaultAvatar: '/img/default-avatar.png'
 }
 
 const mutations = {
@@ -19,8 +16,8 @@ const mutations = {
 }
 
 const actions = {
-  async GET_BLOG_NEWS ({ state, getters, commit }) {
-    const response = (await (await fetch(`${getters.newsEndpoint}`)).json()).data
+  async GET_BLOG_NEWS ({ state, commit }) {
+    const response = (await (await fetch(`${state.newsEndpoint}`)).json()).data
     commit('BLOG_NEWS', response)
     return state.news
   },
@@ -48,7 +45,6 @@ const actions = {
 export default {
   namespaced: true,
   state,
-  getters,
   actions,
   mutations
 }

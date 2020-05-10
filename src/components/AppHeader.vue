@@ -107,7 +107,7 @@ a:last-child {
   border-radius: 8px!important;
   margin-left: 16px;
   margin-right: 48px;
-  padding: 8px 48px;
+  padding: 12px 48px;
 }
 a.active {
   color: #E15240!important;

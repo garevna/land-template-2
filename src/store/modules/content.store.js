@@ -85,6 +85,10 @@ const state = {
       }
     ]
   },
+  blog: {
+    header: 'Title around articles',
+    articles: [1, 4, 3, 7]
+  },
   footer: {
     topHead: 'READY TO GET STARTED?',
     topText: 'Leave your inquiry and we\'ll get back to you within 24 hours on business days'

@@ -50,6 +50,9 @@
       <!-- <v-row class="mx-0 px-0">
         <StayConnected/>
       </v-row> -->
+      <v-row class="mx-0 px-0">
+        <Articles />
+      </v-row>
       <v-row>
         <section id="footer" class="mx-auto">
         <div class="base-title">
@@ -233,6 +236,7 @@ import Benefits from '@/components/Benefits.vue'
 // import Testimonials from '@/components/Testimonials.vue'
 import FAQ from '@/components/FAQ.vue'
 // import StayConnected from '@/components/StayConnected.vue'
+import Articles from '@/components/Articles.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
@@ -249,6 +253,7 @@ export default {
     // Testimonials,
     FAQ,
     // StayConnected,
+    Articles,
     Footer
   },
   data: function () {
@@ -284,6 +289,7 @@ export default {
     //
   },
   mounted () {
+    this.$store.dispatch('blog/GET_BLOG_NEWS')
     window.addEventListener('resize', this.onResize, { passive: true })
   },
   beforeDestroy () {

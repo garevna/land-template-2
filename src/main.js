@@ -12,6 +12,10 @@ import '@/scss/fonts.scss'
 // import '@/scss/variables.scss'
 import './registerServiceWorker'
 
+Vue.prototype.$openExternalLink = function (url) {
+  window.open(url, '_blank')
+}
+
 Vue.config.productionTip = false
 
 const vue = new Vue({
