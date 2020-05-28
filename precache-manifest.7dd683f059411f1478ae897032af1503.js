@@ -4,12 +4,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dgtek-land-2/browserconfig.xml"
   },
   {
-    "revision": "f65f2e6135b914599e3c",
-    "url": "/dgtek-land-2/css/app.b60c190f.css"
+    "revision": "44f2c624a825bb0851cf",
+    "url": "/dgtek-land-2/css/app.8af9c211.css"
   },
   {
-    "revision": "ecc4eefbb8541411413b",
-    "url": "/dgtek-land-2/css/chunk-vendors.76b4a11a.css"
+    "revision": "53bfc245335f51ed03e6",
+    "url": "/dgtek-land-2/css/chunk-vendors.bcb2940c.css"
   },
   {
     "revision": "32750b00d6f5003097a67377a4af208f",
@@ -96,10 +96,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dgtek-land-2/img/man_with_building.462a4c08.svg"
   },
   {
-    "revision": "5147c68b30b8b0beabbf6eb897e5d458",
-    "url": "/dgtek-land-2/img/pointed-shape.5147c68b.svg"
-  },
-  {
     "revision": "365f2efda4e4d916f2e8cfd94a0cd057",
     "url": "/dgtek-land-2/img/security.365f2efd.svg"
   },
@@ -108,16 +104,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dgtek-land-2/img/speed.c9a0c7cf.svg"
   },
   {
-    "revision": "d907eafc072c5b5a384b99614dfbf36a",
+    "revision": "844a8c254e9257c3b05be78ffb0c5b24",
     "url": "/dgtek-land-2/index.html"
   },
   {
-    "revision": "f65f2e6135b914599e3c",
-    "url": "/dgtek-land-2/js/app.423614d9.js"
+    "revision": "44f2c624a825bb0851cf",
+    "url": "/dgtek-land-2/js/app.0f98e99d.js"
   },
   {
-    "revision": "ecc4eefbb8541411413b",
-    "url": "/dgtek-land-2/js/chunk-vendors.09c42f34.js"
+    "revision": "53bfc245335f51ed03e6",
+    "url": "/dgtek-land-2/js/chunk-vendors.8f3b63d0.js"
   },
   {
     "revision": "987663d6d62c7cac418fbaedf6555291",
