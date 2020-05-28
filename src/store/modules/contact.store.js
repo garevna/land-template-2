@@ -49,23 +49,21 @@ const state = {
     },
     list: {
       type: 'selector',
-      placeholder: '...',
+      placeholder: 'List',
       available: [],
       configured: true,
       value: ''
     },
     number: {
-      type: 'input-with-validation',
-      placeholder: '...',
-      validator: 'val => val.match(/^[0-9]*$/)',
+      type: 'number',
+      placeholder: 'Number',
       configured: true,
       value: ''
     },
     combo: {
       type: 'combobox',
-      placeholder: '...',
+      placeholder: 'Combobox',
       available: [],
-      validator: function (val) { console.log(this.available); return this.available.indexOf(val) !== -1 },
       configured: true,
       value: ''
     },
@@ -78,25 +76,11 @@ const state = {
   },
   emailSubject: '',
   emailText: '',
-  messageForMail: '',
-  fieldsToShow: [],
-  errors: {
-    name: false,
-    email: false,
-    address: false,
-    postcode: false,
-    state: false,
-    phone: false,
-    list: false,
-    number: false,
-    combo: false,
-    message: false
-  }
+  messageForMail: ''
 }
 
 const getters = {
-  pages: (state, getters, rootState) => rootState.pages.filter(item => item !== 'Contact Us'),
-  selectors: (state, getters, rootState) => rootState.selectors.filter(item => item !== '#contact')
+  //
 }
 
 const mutations = {
@@ -134,7 +118,7 @@ const mutations = {
   },
 
   SET_ERROR: (state, payload) => {
-    state.errors[payload.prop] = payload.value
+    state.contactFormFields[payload.prop].error = payload.value
   },
   CLEAR_ALL_FIELDS: (state) => {
     for (const field in state.contactFormFields) {

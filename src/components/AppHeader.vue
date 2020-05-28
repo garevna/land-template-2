@@ -7,7 +7,7 @@
           v-model="panel"
           class="app-bar d-lg-none"
           width="100%"
-          style="position: fixed; z-index: 10"
+          style="position: fixed; left: 0; top: 0; z-index: 10"
   >
     <v-expansion-panel style="background: #FAFAFA">
       <v-expansion-panel-header
@@ -28,7 +28,7 @@
               <v-list-item
                   v-for="(page, index) in pages"
                   :key="index"
-                  @click="$emit('update:page', selectors[index])"
+                  @click="$emit('update:page', selectors[index]); panel  = []"
               >
                 <v-list-item-title class="main-menu-items" :id="selectors[index]">
                   {{ page }}

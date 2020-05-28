@@ -11,33 +11,30 @@
               :validator="field.validator"
               v-if="field.show && field.type === 'input-with-validation'"
         />
-        <ComboBoxInput
+        <List
               label="State*"
               :values="field.available"
               fieldName="state"
               v-if="field.show && fieldName === 'state'"
         />
         <InputPhoneNumber v-if="field.show && fieldName === 'phone'" />
-        <ComboBoxInput
+        <List
               :label="field.placeholder"
               :values="field.available"
               :fieldName="fieldName"
               v-if="field.show && fieldName === 'list'"
         />
 
-        <!-- <InputWithValidation
+        <NumberInput
               :label="field.placeholder"
-              :fieldName="fieldName"
-              :validator="field.validator"
               v-if="field.show && fieldName === 'number'"
         />
 
-        <InputWithValidation
+        <Combo
               :label="field.placeholder"
-              :fieldName="fieldName"
-              :validator="val => promocodes.indexOf(val) !== -1"
+              :values="field.available"
               v-if="field.show && fieldName === 'combo'"
-        /> -->
+        />
 
         <InputMessage
               :label="field.placeholder"
@@ -46,10 +43,21 @@
       </div>
     </v-card-text>
 
+    <v-card-text class="ma-auto" width="50%" height="10">
+      <v-progress-linear
+          color="#09b"
+          buffer-value="0"
+          stream
+          v-if="progress"
+      ></v-progress-linear>
+    </v-card-text>
+
     <v-card-actions class="text-center">
       <v-btn
           color="buttons"
           dark
+          min-width="180"
+          height="48"
           class="submit-button px-auto mx-auto"
           @click="sendUserRequest"
       >
@@ -100,7 +108,9 @@ import { mapState, mapActions } from 'vuex'
 
 import InputWithValidation from '@/components/contact/InputWithValidation.vue'
 import InputPhoneNumber from '@/components/contact/InputPhoneNumber.vue'
-import ComboBoxInput from '@/components/contact/ComboBoxInput.vue'
+import List from '@/components/contact/List.vue'
+import NumberInput from '@/components/contact/Number.vue'
+import Combo from '@/components/contact/Combo.vue'
 import InputMessage from '@/components/contact/InputMessage.vue'
 
 import Popup from '@/components/contact/Popup.vue'
@@ -113,7 +123,9 @@ export default {
   components: {
     InputPhoneNumber,
     InputWithValidation,
-    ComboBoxInput,
+    List,
+    NumberInput,
+    Combo,
     InputMessage,
     Popup,
     PopupError
@@ -122,7 +134,8 @@ export default {
     return {
       popupOpened: false,
       popupErrorOpened: false,
-      fields: null
+      fields: null,
+      progress: false
     }
   },
   computed: {
@@ -141,16 +154,15 @@ export default {
     ...mapActions('contact', {
       sendEmail: 'SEND_EMAIL'
     }),
-    getAvailability (propName) {
-      // return this.userForm.fieldsToShow.indexOf(propName) !== -1
-    },
     initFields () {
       this.$store.commit('contact/CLEAR_ALL_FIELDS')
     },
 
     async sendUserRequest () {
+      this.progress = true
       if (await this.sendEmail()) this.popupOpened = true
       else this.popupErrorOpened = true
+      this.progress = false
     }
   },
   mounted () {

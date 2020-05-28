@@ -65,7 +65,7 @@ const state = {
       list: {
         placeholder: 'Custom select',
         available: ['first', 'second', 'third'],
-        show: true
+        show: false
       },
       number: {
         placeholder: 'Custom numeric',
@@ -74,7 +74,7 @@ const state = {
       combo: {
         placeholder: 'Custom combobox',
         available: ['first', 'second', 'third'],
-        show: true
+        show: false
       },
       message: {
         placeholder: 'Enquiry',

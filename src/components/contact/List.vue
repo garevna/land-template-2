@@ -19,7 +19,7 @@
 <script>
 
 export default {
-  name: 'ComboBoxInput',
+  name: 'List',
   props: ['label', 'values', 'fieldName'],
   data () {
     return {

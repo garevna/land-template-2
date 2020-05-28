@@ -42,8 +42,8 @@
 <script>
 
 export default {
-  name: 'InputWithValidation',
-  props: ['label', 'fieldName', 'validator'],
+  name: 'NumberInput',
+  props: ['label'],
   data () {
     return {
       normalColor: '#656565',
@@ -57,11 +57,11 @@ export default {
   computed: {
     result: {
       get () {
-        return this.$store.state.contact.contactFormFields[this.fieldName].value
+        return this.$store.state.contact.contactFormFields.number.value
       },
       set (val) {
         this.$store.commit('contact/UPDATE_USER_INFO', {
-          prop: this.fieldName,
+          prop: 'number',
           value: val
         })
       }
@@ -69,19 +69,13 @@ export default {
   },
   methods: {
     validate (val) {
-      this.error = !this.validator(val)
+      this.error = !val.match(/^[0-9]*$/)
       this.$store.commit('contact/SET_ERROR', {
-        prop: this.fieldName,
+        prop: 'number',
         value: this.error
       })
       this.color = val.length === 0 ? this.normalColor : this.error ? this.errorColor : this.validColor
       this.validationIcon = this.error ? '$invalid' : ''
-    }
-  },
-  mounted () {
-    this.available = this.$store.state.contact.contactFormFields[this.fieldName].available
-    if (this.available) {
-      this.validator = val => this.avalable.indexOf(val) !== -1
     }
   }
 }
