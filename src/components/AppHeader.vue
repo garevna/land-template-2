@@ -28,9 +28,11 @@
               <v-list-item
                   v-for="(page, index) in pages"
                   :key="index"
-                  @click="$emit('update:page', selectors[index]); panel = []"
+                  @click="$emit('update:page', selectors[index])"
               >
-                <v-list-item-title class="main-menu-items">{{ page }}</v-list-item-title>
+                <v-list-item-title class="main-menu-items" :id="selectors[index]">
+                  {{ page }}
+                </v-list-item-title>
               </v-list-item>
             </v-list>
       </v-expansion-panel-content>
@@ -50,24 +52,17 @@
             <v-img src="@/assets/logo.png" contain width="150" height="45"></v-img>
           </span>
           <v-spacer></v-spacer>
-      <!-- <v-btn-toggle
-            group
-            flat
-            class="mr-10 d-none d-lg-flex"
-            color="transparent"
-            v-model="toggle"
-      > -->
         <a
                v-for="(page, index) in pages"
                :key="index"
                :value="index"
+               :id="selectors[index]"
                name="main-nav-menu-anchor"
                ref="`menu-item-${index}`"
                :class="getClassName(page)"
-               @click="action($event.target)">
+               @click="action($event)">
               {{ page }}
         </a>
-      <!-- </v-btn-toggle> -->
     </v-row>
   </v-app-bar>
 </v-container>
@@ -173,12 +168,15 @@ export default {
   props: ['page'],
   data () {
     return {
-      anchors: null,
-      panel: undefined
+      selected: null,
+      panel: []
     }
   },
   computed: {
-    ...mapState(['pages', 'selectors']),
+    ...mapState('content', {
+      pages: 'mainNavButtons',
+      selectors: 'mainNavSectors'
+    }),
     burgerMenuClassFirst () {
       return this.panel === 0 ? 'burger-menu-active--first' : 'burger-menu--first'
     },
@@ -192,11 +190,11 @@ export default {
       const className = pageName === 'Call back' ? ' app-bar-menu-bordered py-2 px-12' : ''
       return `app-bar-menu${className}`
     },
-    action (target) {
+    action (event) {
+      console.log(event.target.id)
       this.anchors.forEach((elem, index) => { elem.className = '' })
-      target.className = 'active'
-      this.$emit('update:page', Number(target.value))
-      this.panel = []
+      event.target.className = 'active'
+      this.$emit('update:page', event.target.id)
     }
   },
   mounted () {

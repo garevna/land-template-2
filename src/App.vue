@@ -1,8 +1,8 @@
 <template>
   <v-app light>
-    <AppHeader :page="page"/>
+    <AppHeader :page.sync="page"/>
     <v-container fluid class="pa-0 my-0 mx-auto" style="max-width: 1000px">
-      <Top />
+      <Top :page.sync="page" />
       <v-row class="mx-0 px-0 my-12" align="center" justify="space-between">
         <v-col cols="12" md="6">
           <v-card flat width="100%" max-width="450" class="transparent">
@@ -14,6 +14,7 @@
             ></v-img>
           </v-card>
         </v-col>
+
         <v-col cols="12" md="6" class="mx-0 px-0">
           <section id="contact" class="mx-auto">
             <div class="base-title">
@@ -27,7 +28,7 @@
       <section id="benefits" class="mx-auto">
         <div class="base-title">
           <a href="#benefits" class="core-goto"></a>
-          <Benefits />
+          <Benefits :page.sync="page" />
         </div>
       </section>
 
@@ -41,7 +42,7 @@
       <section id="faq" class="mx-auto">
         <div class="base-title">
           <a href="#faq" class="core-goto"></a>
-          <FAQ />
+          <FAQ :page.sync="page" />
         </div>
       </section>
 
@@ -55,7 +56,7 @@
       <section id="articles" class="mx-auto">
         <div class="base-title">
           <a href="#articles" class="core-goto"></a>
-          <Articles />
+          <Articles :page.sync="page" />
         </div>
       </section>
 
@@ -157,6 +158,8 @@ p {
 
 <script>
 
+import { mapState } from 'vuex'
+
 import AppHeader from '@/components/AppHeader.vue'
 import Top from '@/components/Top.vue'
 // import Aside from '@/components/Aside.vue'
@@ -187,7 +190,7 @@ export default {
   },
   data: function () {
     return {
-      page: 0,
+      page: null,
       cards: null,
       viewport: {
         width: window.innerWidth,
@@ -195,9 +198,32 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState(['viewportWidth']),
+    ...mapState('content', {
+      title: 'browserTabTitle',
+      subject: 'emailSubject',
+      emailText: 'emailText',
+      pages: 'mainNavButtons',
+      selectors: 'selectors',
+      top: 'top',
+      info: 'info',
+      userForm: 'userForm',
+      howToConnect: 'howToConnect',
+      testimonials: 'testimonials',
+      faq: 'faq',
+      footer: 'footer'
+    })
+  },
   watch: {
     page (val) {
-      console.log(val)
+      if (!val) return
+      this.$vuetify.goTo(val, {
+        duration: 500,
+        offset: 20,
+        easing: 'easeInOutCubic'
+      })
+      this.page = undefined
     }
   },
   methods: {

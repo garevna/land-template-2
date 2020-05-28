@@ -17,21 +17,15 @@ export default new Vuex.Store({
     officeEmail: 'info@dgtek.net',
     client: null,
     viewportWidth: window.innerWidth,
-    viewportHeight: window.innerHeight,
-    pages: ['Home', 'Benefits', 'Reviews', 'FAQ', 'Call back'],
-    selectors: ['home', 'benefits', 'rewiews', 'faq', 'contact']
+    viewportHeight: window.innerHeight
   },
   modules,
 
   getters: {
-    clientInfoURL: state => (`${state.hostForClientInfo}?api-key=${state.keyForClientInfo}`)
+    // clientInfoURL: state => (`${state.hostForClientInfo}?api-key=${state.keyForClientInfo}`)
   },
 
   mutations: {
-
-    SET_SHOW_SPEEDTEST: (state, show) => {
-      state.showSpeedtest = show
-    },
     SET_LARGE_BUTTON: (state, val) => {
       state.buttonLarge = val
     },

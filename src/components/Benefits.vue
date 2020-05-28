@@ -16,7 +16,7 @@
                   height="48"
                   min-width="180"
                   class="submit-button px-auto mx-auto"
-                  @click="$emit('update:page', 'contact')"
+                  @click="$emit('update:page', benefits.goto)"
               >
                   {{ benefits.button }}
               </v-btn>
