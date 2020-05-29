@@ -133,7 +133,9 @@ const actions = {
   async SEND_EMAIL ({ state, commit }) {
     let error = false
     for (const field in state.contactFormFields) {
-      error = error || state.contactFormFields[field].error
+      if (state.contactFormFields[field].show) {
+        error = error || state.contactFormFields[field].error || !state.contactFormFields[field].value
+      }
     }
     if (error) return false
     commit('CREATE_MESSAGE')
