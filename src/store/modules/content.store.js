@@ -5,18 +5,18 @@ const state = {
   browserTabTitle: 'DGtek',
   emailSubject: 'DGtek for the owner’s corporation',
   emailText: 'Thank you for your interest in DGtek. A member of our team will be in touch shortly.',
-  mainNavButtons: ['Benefits', 'Articles', 'FAQ', 'Call back'],
+  mainNavButtons: ['Benefits', 'Articles', 'FAQ', 'Get in Touch'],
   mainNavSectors: ['#benefits', '#articles', '#faq', '#contact'],
   top: {
     header: 'Get Ultra-Fast Fibre Internet in Your Apartment Building - At No Cost to The Owner’s Corporation',
-    text: 'DGtek’s residential fibre improves internet access for your building’s residents. Up to 900% faster than the NBN. You’ll be the residents’ hero, once you secure a 21st-century internet connection for your neighbours, and the Owner’s Corporation pays nothing for the work.',
+    text: 'DGtek’s residential fibre improves internet access for your building’s residents. Our independent fibre is up to 900% faster than the NBN. And you’ll be the residents’ hero, once you secure a 21st-century internet connection for your neighbours, and the Owner’s Corporation pays nothing for the work.',
     button: 'Get In Touch',
     goto: '#contact',
     image: '@/assets/pictures/lady-on-sofa.svg'
   },
   aside: {
     header: 'Get in touch with our team to learn more!',
-    text: '[Offer text... Offer text... Offer text... Offer text... Offer text... Offer text... Offer text... Offer text... Offer text... Offer text... Offer text... Offer text...]',
+    text: 'We’ll wire your building, carefully, with optical fibre. We’ll upgrade your CCTV and provide FTTH internet. This is not the NBN. We’ll get you faster, cheaper and the most reliable connection. With DGtek you’ll always have superior internet that will improve the online experience and add significant value to your residents’ homes and lives.',
     offer: [
       {
         blackText: '[ Relevant ]',
@@ -84,7 +84,7 @@ const state = {
   },
   benefits: {
     header: 'What DGtek Can Do For You',
-    text: 'We’ll wire your building, carefully, with optical fibre. We’ll upgrade your CCTV and provide FTTH internet. We’ll get you faster, cheaper and the most reliable connection. With DGtek you’ll always have superior internet that will improve the online experience and add significant value to your residents’ homes and lives.',
+    text: 'We’ll wire your building, carefully, with optical fibre. We’ll upgrade your CCTV and provide FTTH internet. This is not the NBN. We’ll get you faster, cheaper and the most reliable connection. With DGtek you’ll always have superior internet that will improve the online experience and add significant value to your residents’ homes and lives.',
     button: 'Get A Designer On Site',
     goto: '#contact',
     items: [
